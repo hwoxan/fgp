@@ -8,7 +8,7 @@
 body {
     font-family: 'Poppins', sans-serif; /* Fonte moderna */
     background-color: #0c0c0c; /* Fundo escuro mais elegante */
-    background-image: url('/fgp/assets/img/wallpaper.png');
+    background-image: url('https://raw.githubusercontent.com/hwoxan/fgp/main/assets/img/wallpaper.png');
     background-size: cover;
     background-position: center;
     color: #ffffff; /* Texto branco */
