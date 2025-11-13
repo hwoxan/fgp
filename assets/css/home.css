@@ -19,47 +19,56 @@ body {
 /* Header */
 header {
     background-color: rgba(20, 20, 20, 0.9); /* Fundo escuro mais forte */
-    padding: 10px 0;
+    padding: 20px 0;
     text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
-    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Sombra suave */
+    border-radius: 20px;
     margin-top: 20px; /* Distância do topo */
+    animation: slideDown 0.5s ease-out; /* Animação suave ao entrar */
 }
 
 header h1 {
-    font-size: 3rem; /* Tamanho de fonte maior e moderno */
+    font-size: 3.5rem; /* Tamanho de fonte maior e moderno */
     color: #F7CB4D;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
     font-weight: bold;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     text-transform: uppercase; /* Letra maiúscula para um visual mais forte */
+    transition: transform 0.3s ease;
+}
+
+header h1:hover {
+    transform: scale(1.1); /* Aumenta o título ao passar o mouse */
 }
 
 /* Navigation */
 .navbar {
-    background-color: rgba(20, 20, 20, 0.8);
+    background-color: rgba(20, 20, 20, 0.9);
     padding: 20px 0;
     display: flex;
     justify-content: center;
     gap: 35px;
-    border-radius: 15px; /* Bordas arredondadas */
+    border-radius: 20px; /* Bordas arredondadas */
     margin-top: 10px; /* Distância entre navbar e conteúdo */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra suave */
 }
 
 .navbar a {
     color: #fff;
-    font-size: 1.1rem;
-    font-weight: 500;
+    font-size: 1.2rem;
+    font-weight: 600;
     text-decoration: none;
-    transition: all 0.3s ease; /* Suaviza a transição */
-    border-radius: 5px;
-    padding: 5px 10px;
+    transition: all 0.4s ease; /* Suaviza a transição */
+    border-radius: 10px;
+    padding: 10px 15px;
+    background-color: rgba(247, 202, 77, 0.1); /* Leve fundo dourado */
 }
 
 .navbar a:hover {
     color: #F7CB4D;
-    background-color: rgba(247, 202, 77, 0.1); /* Fundo leve ao passar o mouse */
-    text-decoration: underline;
+    background-color: rgba(247, 202, 77, 0.2); /* Fundo dourado mais forte */
+    box-shadow: 0 0 10px rgba(247, 202, 77, 0.5); /* Efeito de brilho */
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
 }
 
 /* Main Content */
@@ -69,30 +78,42 @@ header h1 {
     padding: 30px;
     background-color: rgba(247, 202, 77, 0.15); /* Cor suave de fundo */
     border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombras modernas */
-    backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4); /* Sombras modernas */
+    backdrop-filter: blur(15px); /* Efeito de desfoque no fundo */
     border: 1px solid rgba(247, 202, 77, 0.3); /* Borda fina e suave */
+    animation: fadeIn 1s ease-out; /* Animação suave ao entrar */
 }
 
 /* Post Style */
 .post {
-    background-color: rgba(20, 20, 20, 0.8);
-    padding: 20px;
-    margin-bottom: 25px;
-    border-radius: 15px;
-    transition: transform 0.3s ease;
+    background-color: rgba(20, 20, 20, 0.5); /* menos opaco para mostrar mais conteúdo atrás */
+    backdrop-filter: blur(20px) brightness(0.8); /* desfoque + leve escurecimento para profundidade */
+    -webkit-backdrop-filter: blur(20px) brightness(0.8); /* prefixo para compatibilidade */
+    border: 1px solid rgba(247, 202, 77, 0.25); /* borda dourada suave para destacar */
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35); /* sombra mais profunda para “elevar” o card */
 }
 
 .post:hover {
-    transform: translateY(-5px); /* Efeito de elevação */
+    transform: translateY(-10px) scale(1.02);
+    background-color: rgba(20, 20, 20, 0.65);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
 }
 
 .post h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: #F7CB4D;
     margin-bottom: 15px;
-    font-weight: bold;
+    font-weight: 700;
     letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.post h2:hover {
+    color: #F7CB4D;
 }
 
 .post p {
@@ -105,10 +126,11 @@ header h1 {
 
 .post iframe {
     width: 100%;
-    max-width: 640px;
-    height: 360px;
-    margin: 20px 0;
+    max-width: 700px;
+    height: 380px;
+    margin: 25px 0;
     border-radius: 15px;
+    border: none;
 }
 
 /* Footer */
@@ -118,15 +140,16 @@ footer {
     text-align: center;
     padding: 20px 0;
     font-size: 1rem;
-    border-radius: 15px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-out; /* Animação suave ao entrar */
 }
 
 footer a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+    font-weight: 600;
+    transition: color 0.4s ease;
 }
 
 footer a:hover {
@@ -136,17 +159,17 @@ footer a:hover {
 /* Responsividade */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
 
     .navbar {
         flex-direction: column;
-        padding: 15px 0;
+        padding: 20px 0;
     }
 
     .navbar a {
-        font-size: 1.2rem;
-        margin-bottom: 10px;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
     }
 
     .post {
@@ -157,10 +180,31 @@ footer a:hover {
 
     .post iframe {
         width: 100%;
-        margin-top: 15px;
+        margin-top: 20px;
     }
 
     footer {
-        padding: 20px;
+        padding: 30px;
+    }
+}
+
+/* Animations */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
